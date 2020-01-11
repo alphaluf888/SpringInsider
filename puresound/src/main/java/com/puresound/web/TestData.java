@@ -1,8 +1,24 @@
 package com.puresound.web;
 
-import lombok.Data;
+import java.util.Map;
 
-public @Data class TestData {
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonGetter;
+
+
+
+public class TestData {
 	private String name;
 	private int days;
+	private Map<String, String> properties;
+	
+	@JsonAnyGetter
+	public Map<String, String> getProperties() {
+		return properties;
+	}
+	
+	@JsonGetter("name")
+	public String getTheName() {
+		return name;
+	}
 }

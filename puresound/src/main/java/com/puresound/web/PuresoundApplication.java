@@ -34,6 +34,8 @@ public class PuresoundApplication {
 		TestData d = new TestData();
 		QueryService queryService = ctx.getBean(QueryService.class);
 		queryService.queryOxfordDict();
+		TestData t = new TestData();
+		
 	}
 	
 	@Bean
