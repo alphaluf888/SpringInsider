@@ -21,4 +21,8 @@ public class TestData {
 	public String getTheName() {
 		return name;
 	}
+	
+	public static void main(String[] args) {
+		Singleton s = Singleton.getInstance();
+	}
 }
