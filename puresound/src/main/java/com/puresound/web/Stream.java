@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
+
 import static java.util.stream.Collectors.toList;
 
 public class Stream {
@@ -58,5 +60,12 @@ public class Stream {
 				.collect(toList());
 		System.out.println("highCaloricDishes4.........");
 		highCaloricDishes4.forEach(System.out::println);
+		
+		List<Integer> numbers = Arrays.asList(10, 11, 12, 13);
+		List<Integer> result = numbers.stream().skip(1).collect(toList());
+		Optional<Integer> k = numbers.stream().reduce((x, y) -> x > y? 1: 0);
+		if(k.isPresent()) {
+			System.out.println("K: " + k.get());
+		}
 	}
 }
