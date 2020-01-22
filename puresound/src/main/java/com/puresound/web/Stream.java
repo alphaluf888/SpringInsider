@@ -67,5 +67,17 @@ public class Stream {
 		if(k.isPresent()) {
 			System.out.println("K: " + k.get());
 		}
+		
+		Optional<Integer> max = numbers.stream().reduce(Integer::max);
+		System.out.println("max:" + max.get());
+		
+		Optional<Integer> min = numbers.stream().reduce(Integer::min);
+		System.out.println("min:" + min.get());
+		
+		int dishesCnt = menu.stream()
+										.map(x -> 1)
+										.reduce(0, (x, y) -> x + y);
+		
+		System.out.println("dishesCnt: " + dishesCnt);
 	}
 }
